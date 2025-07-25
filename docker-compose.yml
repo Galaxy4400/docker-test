@@ -1,11 +1,16 @@
 services:
   date:
+    platform: linux/amd64
     image: galaxy4400/result-date
     build:
+      context: .
       dockerfile: date.dockerfile
+
   result:
+    platform: linux/amd64
     image: galaxy4400/result
-    build: .
+    build:
+      context: .
     ports:
       - "3000:3000"
     env_file:
